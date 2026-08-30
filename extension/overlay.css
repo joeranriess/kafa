@@ -1,0 +1,265 @@
+/* KAFA — Kleinanzeigen Anti Fraud Assistant */
+
+#kafa-fraud-btn-wrapper {
+  padding: 6px 12px 8px;
+  background: transparent;
+}
+
+#kafa-fraud-check-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1.5px solid #1d4b00;
+  border-radius: 8px;
+  color: #1d4b00;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+#kafa-fraud-check-btn:hover:not(:disabled) {
+  background: rgba(29, 75, 0, 0.08);
+}
+
+#kafa-fraud-check-btn:disabled {
+  border-color: #ccc;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+#kafa-fraud-check-btn .kafa-btn-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Sheet backdrop */
+#kafa-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 99998;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: kafa-fade-in 0.15s ease;
+}
+
+@keyframes kafa-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Sheet container */
+#kafa-sheet {
+  background: #fff;
+  width: 100%;
+  max-width: 680px;
+  max-height: 82vh;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 20px 28px;
+  overflow-y: auto;
+  animation: kafa-slide-up 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  z-index: 99999;
+}
+
+@keyframes kafa-slide-up {
+  from { transform: translateY(60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.kafa-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.kafa-sheet-title {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kafa-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 20px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+}
+.kafa-close-btn:hover { background: #f0f0f0; }
+
+/* Risk chip */
+.kafa-risk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.kafa-risk-kritisch { background: #fee2e2; color: #991b1b; }
+.kafa-risk-hoch     { background: #ffedd5; color: #9a3412; }
+.kafa-risk-mittel   { background: #fef9c3; color: #854d0e; }
+.kafa-risk-gering   { background: #f3f4f6; color: #4b5563; }
+.kafa-risk-kein     { background: #dcfce7; color: #166534; }
+
+/* Content sections */
+.kafa-section {
+  margin-bottom: 12px;
+}
+
+.kafa-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.kafa-section-body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.kafa-section-body ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.kafa-section-body li { margin-bottom: 2px; }
+
+/* Note box */
+.kafa-note-box {
+  background: rgba(29, 75, 0, 0.07);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #1d4b00;
+  margin-bottom: 12px;
+}
+
+/* Profile unavailable */
+.kafa-profile-note {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+/* Divider */
+.kafa-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 14px 0;
+}
+
+/* Action buttons */
+.kafa-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kafa-btn-primary {
+  padding: 11px;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.kafa-btn-primary:hover { background: #b91c1c; }
+
+.kafa-secondary-link {
+  text-align: center;
+  font-size: 13px;
+  color: #1d4b00;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  padding: 4px 0;
+}
+.kafa-secondary-link:hover { color: #1e3a8a; }
+
+.kafa-police-hint {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+.kafa-police-hint a { color: #1d4b00; }
+
+.kafa-btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+.kafa-btn-ghost {
+  flex: 1;
+  padding: 9px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  color: #444;
+}
+.kafa-btn-ghost:hover { background: #f9f9f9; }
+
+/* Loading spinner in sheet */
+.kafa-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.kafa-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #1d4b00;
+  border-radius: 50%;
+  animation: kafa-spin 0.7s linear infinite;
+}
+
+@keyframes kafa-spin {
+  to { transform: rotate(360deg); }
+}
+
+.kafa-loading-text {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Error state */
+.kafa-error {
+  text-align: center;
+  padding: 20px 0;
+}
+.kafa-error-icon { font-size: 28px; margin-bottom: 8px; }
+.kafa-error-msg { font-size: 13px; color: #666; }

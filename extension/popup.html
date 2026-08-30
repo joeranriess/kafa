@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleinanzeigen Anti Fraud Assistant</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 320px;
+      padding: 16px;
+      background: #fff;
+      color: #1a1a1a;
+    }
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #1a1a1a;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    select, input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      background: #fff;
+      color: #1a1a1a;
+    }
+    select:disabled { color: #999; }
+    select:focus, input:focus { outline: none; border-color: #1d4b00; }
+    .model-row { position: relative; }
+    .model-spinner {
+      display: none;
+      position: absolute;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-70%);
+      width: 12px;
+      height: 12px;
+      border: 2px solid #ccc;
+      border-top-color: #1d4b00;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    .model-spinner.visible { display: block; }
+    @keyframes spin { to { transform: translateY(-70%) rotate(360deg); } }
+    button {
+      width: 100%;
+      padding: 9px;
+      background: #1d4b00;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 2px;
+    }
+    button:hover { background: #1d4b00; }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 18px;
+    }
+    #status.ok { color: #15803d; }
+    #status.err { color: #dc2626; }
+    .hint {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.5;
+    }
+    .hint a { color: #1d4b00; text-decoration: none; }
+    .divider { border: none; border-top: 1px solid #eee; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <h1>🛡 Kleinanzeigen Anti Fraud Assistant</h1>
+
+  <label for="provider">Anbieter</label>
+  <select id="provider">
+    <option value="claude">Claude (Anthropic)</option>
+    <option value="openai">ChatGPT (OpenAI)</option>
+    <option value="openrouter">OpenRouter</option>
+  </select>
+
+  <label for="api-key">API Key</label>
+  <input type="password" id="api-key" placeholder="sk-ant-..." autocomplete="off" />
+
+  <div id="workspace-row">
+    <label for="workspace-id">Workspace ID <span style="color:#aaa;font-weight:400">(nur bei identity-linked Keys)</span></label>
+    <input type="text" id="workspace-id" placeholder="wrk_01..." autocomplete="off" />
+  </div>
+
+  <label for="model">Modell</label>
+  <div class="model-row">
+    <select id="model"></select>
+    <div class="model-spinner" id="model-spinner"></div>
+  </div>
+
+  <button id="save-btn">Speichern</button>
+  <div id="status"></div>
+
+  <hr class="divider" />
+  <p class="hint">
+    API Key wird lokal gespeichert und nie weitergegeben.<br>
+    API Keys: <a href="https://console.anthropic.com/" target="_blank">Anthropic</a> &middot;
+    <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a> &middot;
+    <a href="https://openrouter.ai/keys" target="_blank">OpenRouter</a>
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+*.zip
+.DS_Store
+Screenshot*.png
+eval/
+patterns/
+prompt/
+specs/
