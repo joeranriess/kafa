@@ -3,7 +3,7 @@
   "name": "Kleinanzeigen Anti Fraud Assistant",
   "version": "0.2.0",
   "description": "Analysiert Kleinanzeigen-Konversationen auf Betrugsrisiken und gibt klare Handlungsempfehlungen.",
-  "homepage_url": "https://github.com/joeranriess/kafa",
+  "homepage_url": "https://joeranriess.github.io/kafa/privacy-policy.html",
   "permissions": ["storage"],
   "host_permissions": [
     "https://www.kleinanzeigen.de/*",
