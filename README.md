@@ -4,7 +4,7 @@ A Chrome extension that analyses Kleinanzeigen conversations for fraud risk and 
 
 ## Install
 
-Available on the [Chrome Web Store](#) *(link added after review)*.
+Available on the [Chrome Web Store](https://chromewebstore.google.com/detail/gegkidfocfemgknmgnicglgnhglbeibd).
 
 Or load it locally:
 
