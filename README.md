@@ -20,7 +20,7 @@ Click the extension icon and enter your API key for one of the supported provide
 |----------|--------------------|--------------------|
 | Claude (Anthropic) | [console.anthropic.com](https://console.anthropic.com/) | ~€0.01, varies by conversation length |
 | OpenAI | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) | ~€0.01, varies by conversation length |
-| OpenRouter | [openrouter.ai/keys](https://openrouter.ai/keys) | free (Nemotron) or ~€0.01, varies by conversation length |
+| OpenRouter | [openrouter.ai/keys](https://openrouter.ai/keys) | free (Llama 3.3 70B) or ~€0.01, varies by conversation length |
 
 **OpenRouter is the easiest way to use KAFA for free**: create an account, get a free API key, and the default model (NVIDIA Nemotron Ultra 253B) runs at no cost. Paid models like Claude or GPT-4o are also available through OpenRouter if you prefer.
 
